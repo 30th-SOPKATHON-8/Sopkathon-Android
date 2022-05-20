@@ -10,5 +10,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Log.d("승현", "하이")
+        Log.d("승현쌤","최고")
     }
 }
