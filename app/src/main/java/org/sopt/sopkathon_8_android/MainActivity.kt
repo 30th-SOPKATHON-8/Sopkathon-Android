@@ -11,5 +11,6 @@ class MainActivity : AppCompatActivity() {
 
         Log.d("승현", "하이")
         Log.d("승현쌤","최고")
+        Log.d("한쌤", "든든하다")
     }
 }
