@@ -4,7 +4,7 @@ data class ItemData(
     val _id: String,
     val title: String,
     val content: String,
-    val price: Int,
+    val price: String,
     val createdAt: String,
     val isXibal: Boolean
 )
