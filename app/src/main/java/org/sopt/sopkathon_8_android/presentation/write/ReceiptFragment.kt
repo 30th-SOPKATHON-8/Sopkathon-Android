@@ -1,25 +1,37 @@
 package org.sopt.sopkathon_8_android.presentation.write
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import org.sopt.sopkathon_8_android.R
+import androidx.fragment.app.Fragment
 import org.sopt.sopkathon_8_android.databinding.FragmentReceiptBinding
 
 
 class ReceiptFragment : Fragment() {
-    private var _binding :FragmentReceiptBinding ?=null
-    private val binding:FragmentReceiptBinding get() = binding ?: error("binding이 연결안되었슴다.")
+    private var _binding: FragmentReceiptBinding? = null
+    private val binding: FragmentReceiptBinding get() = _binding ?: error("binding이 연결안되었슴다.")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_receipt, container, false)
+        _binding = FragmentReceiptBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setOnInputClickEvent()
+    }
+
+
+    private fun setOnInputClickEvent() {
+        binding.btnConfirm.setOnClickListener {
+            requireActivity().finish()  //프레그먼트가 있는 activity를 종료
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
