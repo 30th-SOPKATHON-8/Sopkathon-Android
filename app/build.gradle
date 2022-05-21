@@ -6,10 +6,6 @@ plugins {
 android {
     compileSdk 31
 
-    buildFeatures{
-        viewBinding true
-    }
-
     defaultConfig {
         applicationId "org.sopt.sopkathon_8_android"
         minSdk 24
