@@ -1,8 +1,8 @@
-package org.sopt.sopkathon_8_android
+package org.sopt.sopkathon_8_android.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import org.sopt.sopkathon_8_android.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
