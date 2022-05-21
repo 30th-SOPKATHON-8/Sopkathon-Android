@@ -47,6 +47,7 @@
             android:layout_marginTop="24dp"
             android:onClick="@{()->viewmodel.setXibalGood()}"
             android:src="@mipmap/ic_launcher"
+            app:tint="@color/test_zz"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.144"
@@ -60,6 +61,7 @@
             android:layout_height="0dp"
             android:onClick="@{()->viewmodel.setXibalBad()}"
             android:src="@mipmap/ic_launcher"
+            app:tint="@color/test_zz"
             app:layout_constraintBottom_toBottomOf="@id/iv_good_xibal"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -243,8 +245,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <!--        android:backgroundTint="@color/blue_4664ff"-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
