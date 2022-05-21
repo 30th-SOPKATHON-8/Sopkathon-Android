@@ -11,7 +11,17 @@ import org.sopt.sopkathon_8_android.presentation.write.WriteActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val adapter = MainItemAdapter()
+    private val adapter = MainItemAdapter {
+        val intent = Intent(this, WriteActivity::class.java).apply {
+            putExtra("receipt", true)
+            putExtra("isXibal", it.isXibal)
+            putExtra("title", it.title)
+            putExtra("price", it.price)
+            putExtra("content", it.content)
+            putExtra("createdAt", it.createdAt)
+        }
+        startActivity(intent)
+    }
     private val viewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {

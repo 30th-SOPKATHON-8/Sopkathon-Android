@@ -7,7 +7,8 @@ import okhttp3.internal.notify
 import org.sopt.sopkathon_8_android.data.ItemData
 import org.sopt.sopkathon_8_android.databinding.ItemMainBinding
 
-class MainItemAdapter : RecyclerView.Adapter<MainItemAdapter.MainItemViewHolder>() {
+class MainItemAdapter(private val itemClick: (ItemData) -> Unit) :
+    RecyclerView.Adapter<MainItemAdapter.MainItemViewHolder>() {
     private var itemList = mutableListOf<ItemData>()
 
     fun replaceItem(list: List<ItemData>) {
@@ -18,7 +19,7 @@ class MainItemAdapter : RecyclerView.Adapter<MainItemAdapter.MainItemViewHolder>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainItemViewHolder {
         val binding =
             ItemMainBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MainItemViewHolder(binding)
+        return MainItemViewHolder(binding, itemClick)
     }
 
     override fun onBindViewHolder(holder: MainItemViewHolder, position: Int) {
@@ -28,10 +29,14 @@ class MainItemAdapter : RecyclerView.Adapter<MainItemAdapter.MainItemViewHolder>
     override fun getItemCount(): Int = itemList.size
 
     class MainItemViewHolder(
-        private val binding: ItemMainBinding
+        private val binding: ItemMainBinding,
+        private val itemClick: (ItemData) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ItemData) {
-            binding.data= data
+            binding.data = data
+            binding.root.setOnClickListener {
+                itemClick(data)
+            }
         }
     }
 

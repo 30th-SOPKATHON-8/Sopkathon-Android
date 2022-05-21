@@ -17,6 +17,10 @@ class WriteViewModel : ViewModel() {
     val isSuccess = MutableLiveData<Boolean>()
     val response = MutableLiveData<ResponsePost.Data>()
 
+    fun setResponse(data: ResponsePost.Data) {
+        response.value = data
+    }
+
     fun setXibalGood() {
         isXibal.value = false
     }
