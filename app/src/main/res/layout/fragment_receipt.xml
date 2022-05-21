@@ -1,14 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.write.ReceiptFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_receipt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/pretendard_semibold"
+        android:text="영수증"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <View
+        android:id="@+id/v_line_receipt"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_receipt_title"
+        app:layout_constraintWidth_percent="0.288" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_inner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="36dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="70dp"
+        android:background="@color/gray_f6f6f6"
+        android:paddingHorizontal="30dp"
+        app:layout_constraintTop_toBottomOf="@id/v_line_receipt">
+
+        <ImageView
+            android:id="@+id/iv_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_inner" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="과제 성적 나왔다."
+            android:textColor="@color/black_222222"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/iv_main"
+            app:layout_constraintTop_toBottomOf="@id/iv_main" />
+
+        <ImageView
+            android:id="@+id/iv_title_under_line"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="17dp"
+            android:layerType="software"
+            android:src="@drawable/shape_dash_line"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="11dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="오늘 과제 5점 받았다."
+            android:textColor="@color/black_222222"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@id/iv_title_under_line"
+            app:layout_constraintTop_toTopOf="@id/iv_title_under_line" />
+
+        <ImageView
+            android:id="@+id/iv_under_description"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="33dp"
+            android:layerType="software"
+            android:src="@drawable/shape_dash_line"
+            app:layout_constraintTop_toBottomOf="@id/tv_description" />
+
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="날짜"
+            android:textColor="@color/black_222222"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@id/layout_inner"
+            app:layout_constraintTop_toBottomOf="@id/iv_under_description" />
+
+        <TextView
+            android:id="@+id/tv_data_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:textColor="@color/black_222222"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@id/layout_inner"
+            app:layout_constraintTop_toBottomOf="@id/iv_under_description"
+            tools:text="5월 21일 15:30" />
+
+        <ImageView
+            android:id="@+id/iv_under_data"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="11dp"
+            android:layerType="software"
+            android:src="@drawable/shape_dash_line"
+            app:layout_constraintTop_toBottomOf="@id/tv_data_count" />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="금액"
+            android:textColor="@color/black_222222"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@id/layout_inner"
+            app:layout_constraintTop_toBottomOf="@id/iv_under_data" />
+
+        <TextView
+            android:id="@+id/tv_money_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:textColor="@color/black_222222"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@id/layout_inner"
+            app:layout_constraintStart_toEndOf="tv_money"
+            app:layout_constraintTop_toBottomOf="@id/iv_under_data"
+            tools:text="+3000Xcoin" />
+
+        <ImageView
+            android:id="@+id/iv_under_money"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="11dp"
+            android:layerType="software"
+            android:src="@drawable/shape_dash_line"
+            app:layout_constraintTop_toBottomOf="@id/tv_money_count" />
+
+        <TextView
+            android:id="@+id/tv_second_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="다음에 잘하자!!"
+            android:textColor="@color/black_222222"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@id/layout_inner"
+            app:layout_constraintTop_toBottomOf="@id/iv_under_money" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="23dp"
+            android:src="@drawable/ic_barcode"
+            app:layout_constraintBottom_toBottomOf="@id/layout_inner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_second_description"
+            app:layout_goneMarginBottom="23dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="97dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rectangle_blue_radius_14"
+        android:text="확인"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="40dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
