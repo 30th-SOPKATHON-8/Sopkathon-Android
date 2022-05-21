@@ -1,9 +1,11 @@
 package org.sopt.sopkathon_8_android.presentation.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sopkathon_8_android.databinding.ActivityMainBinding
+import org.sopt.sopkathon_8_android.presentation.write.WriteActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -16,6 +18,14 @@ class MainActivity : AppCompatActivity() {
         clickAll()
         clickGood()
         clickBad()
+        clickWrite()
+    }
+
+    private fun clickWrite() {
+        binding.ivWrite.setOnClickListener{
+            val intent = Intent(this, WriteActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun clickAll() {
