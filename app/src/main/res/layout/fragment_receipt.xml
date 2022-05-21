@@ -149,7 +149,6 @@
             android:textColor="@color/black_222222"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="@id/layout_inner"
-            app:layout_constraintStart_toEndOf="tv_money"
             app:layout_constraintTop_toBottomOf="@id/iv_under_data"
             tools:text="+3000Xcoin" />
 
