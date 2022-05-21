@@ -1,13 +1,12 @@
 package org.sopt.sopkathon_8_android.data
 
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceCreator {
-    private const val BASE_URL = ""
+    private const val BASE_URL = "http://3.39.234.58:3000"
     private val interceptor = HttpLoggingInterceptor().apply {
         setLevel(HttpLoggingInterceptor.Level.BODY)
     }
@@ -20,4 +19,6 @@ object ServiceCreator {
         .addConverterFactory(GsonConverterFactory.create())
         .client(client.build())
         .build()
+
+    val service: Service = retrofit.create(Service::class.java)
 }

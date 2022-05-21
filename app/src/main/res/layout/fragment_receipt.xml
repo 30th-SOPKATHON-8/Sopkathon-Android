@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="21dp"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@{viewmodel.response.isXibal == true ? @drawable/frame_2608156 : @drawable/frame_2608157}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/layout_inner" />
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/pretendard_semibold"
-                android:text="@{viewmodel.title}"
+                android:text="@{viewmodel.response.title}"
                 android:textColor="@color/black_222222"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@id/iv_main"
@@ -88,7 +88,7 @@
                 android:layout_marginTop="11dp"
                 android:layout_marginBottom="11dp"
                 android:fontFamily="@font/pretendard_medium"
-                android:text="@{viewmodel.content}"
+                android:text="@{viewmodel.response.content}"
                 android:textColor="@color/black_222222"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="@id/iv_title_under_line"
@@ -126,7 +126,7 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="@id/layout_inner"
                 app:layout_constraintTop_toBottomOf="@id/iv_under_description"
-                tools:text="5월 21일 15:30" />
+                android:text="@{viewmodel.response.createdAt}" />
 
             <ImageView
                 android:id="@+id/iv_under_data"
@@ -159,7 +159,7 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="@id/layout_inner"
                 app:layout_constraintTop_toBottomOf="@id/iv_under_data"
-                android:text="@{viewmodel.price}" />
+                android:text="@{viewmodel.response.price + ` Xcoin`}" />
 
             <ImageView
                 android:id="@+id/iv_under_money"
@@ -176,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp"
                 android:fontFamily="@font/pretendard_medium"
-                android:text="다음에 잘하자!!"
+                android:text="@{viewmodel.response.isXibal == true ? `주인공에게 이정도 시련은 있을 수 있지!` : `스스로 불러온 행복, 난 멋져!`}"
                 android:textColor="@color/black_222222"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="@id/layout_inner"

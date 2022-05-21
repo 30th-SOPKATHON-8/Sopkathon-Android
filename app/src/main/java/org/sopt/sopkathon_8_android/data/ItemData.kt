@@ -1,4 +1,4 @@
-package org.sopt.sopkathon_8_android.presentation.main
+package org.sopt.sopkathon_8_android.data
 
 data class ItemData(
     val _id: String,

@@ -1,240 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingHorizontal="16dp"
-    tools:context=".presentation.main.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:fontFamily="@font/pretendard_semibold"
-        android:text="오시내시"
-        android:textColor="#000000"
-        android:textFontWeight="600"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <View
-        android:id="@+id/v_line_1"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/black"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent="0.23"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+        <variable
+            name="viewmodel"
+            type="org.sopt.sopkathon_8_android.presentation.viewmodel.MainViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_total_coin"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingBottom="9dp"
-        android:layout_marginTop="19dp"
-        android:background="@drawable/rectangle_gray_radius_10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/v_line_1">
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp"
+        tools:context=".presentation.main.MainActivity">
 
         <TextView
-            android:id="@+id/tv_username"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/pretendard_bold"
-            android:textColor="#b3000000"
-            android:textFontWeight="700"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@id/layout_total_coin"
-            app:layout_constraintTop_toTopOf="@id/layout_total_coin"
-            tools:text="오내시" />
-
-        <TextView
-            android:id="@+id/tv_coin_inform"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:fontFamily="@font/pretendard_medium"
-            android:text="님의 지갑"
-            android:textColor="#000000"
-            android:textFontWeight="500"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_username"
-            app:layout_constraintStart_toEndOf="@id/tv_username"
-            app:layout_constraintTop_toTopOf="@id/layout_total_coin" />
-
-        <TextView
-            android:id="@+id/tv_total_coin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
+            android:layout_marginTop="48dp"
             android:fontFamily="@font/pretendard_semibold"
-            android:text="50,000 Xcoin"
+            android:text="오시내시"
             android:textColor="#000000"
             android:textFontWeight="600"
-            android:textSize="22sp"
-            app:layout_constraintStart_toStartOf="@id/layout_total_coin"
-            app:layout_constraintTop_toBottomOf="@id/tv_coin_inform" />
-
-        <TextView
-            android:id="@+id/tv_total_income"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/pretendard_medium"
-            android:text="+80,000 X발"
-            android:textFontWeight="500"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@id/layout_total_coin"
-            app:layout_constraintTop_toBottomOf="@id/tv_total_coin" />
-
-        <TextView
-            android:id="@+id/tv_divide_line"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/pretendard_medium"
-            android:text="|"
-            android:textFontWeight="500"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_total_income"
-            app:layout_constraintEnd_toStartOf="@id/tv_total_cost"
-            app:layout_constraintStart_toEndOf="@id/tv_total_income"
-            app:layout_constraintTop_toBottomOf="@id/tv_total_coin" />
-
-        <TextView
-            android:id="@+id/tv_total_cost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/pretendard_medium"
-            android:text="-30,000 O굿"
-            android:textFontWeight="500"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_total_income"
-            app:layout_constraintStart_toEndOf="@id/tv_divide_line" />
-
-        <ImageView
-            android:id="@+id/iv_main_icon"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:src="@drawable/main_image"
-            app:layout_constraintBottom_toBottomOf="@id/tv_total_cost"
-            app:layout_constraintDimensionRatio="1:1"
+            android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_coin_inform"
-            app:layout_constraintHorizontal_bias="0.911" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/v_line_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/black"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintWidth_percent="0.23" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_total_coin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/rectangle_gray_radius_10"
+            android:paddingBottom="9dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_line_1">
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="@{viewmodel.total.nickname}"
+                android:textColor="#b3000000"
+                android:textFontWeight="700"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@id/layout_total_coin"
+                app:layout_constraintTop_toTopOf="@id/layout_total_coin" />
+
+            <TextView
+                android:id="@+id/tv_coin_inform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="님의 지갑"
+                android:textColor="#000000"
+                android:textFontWeight="500"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_username"
+                app:layout_constraintStart_toEndOf="@id/tv_username"
+                app:layout_constraintTop_toTopOf="@id/layout_total_coin" />
+
+            <TextView
+                android:id="@+id/tv_total_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="@{viewmodel.total.totalPrice + ` Xcoin`}"
+                android:textColor="#000000"
+                android:textFontWeight="600"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@id/layout_total_coin"
+                app:layout_constraintTop_toBottomOf="@id/tv_coin_inform" />
+
+            <TextView
+                android:id="@+id/tv_total_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="@{`+` + viewmodel.total.xibalPrice + ` X발`}"
+                android:textFontWeight="500"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@id/layout_total_coin"
+                app:layout_constraintTop_toBottomOf="@id/tv_total_coin" />
+
+            <TextView
+                android:id="@+id/tv_divide_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="|"
+                android:textFontWeight="500"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_total_income"
+                app:layout_constraintEnd_toStartOf="@id/tv_total_cost"
+                app:layout_constraintStart_toEndOf="@id/tv_total_income"
+                app:layout_constraintTop_toBottomOf="@id/tv_total_coin" />
+
+            <TextView
+                android:id="@+id/tv_total_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="@{viewmodel.total.sibalPrice + ` O굿`}"
+                android:textFontWeight="500"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_total_income"
+                app:layout_constraintStart_toEndOf="@id/tv_divide_line" />
+
+            <ImageView
+                android:id="@+id/iv_main_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/main_image"
+                app:layout_constraintBottom_toBottomOf="@id/tv_total_cost"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.911"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_coin_inform" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:gravity="center"
+            android:paddingVertical="9dp"
+            android:text="전체"
+            android:textColor="#535353"
+            android:textFontWeight="600"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_good"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_total_coin" />
+
+        <View
+            android:id="@+id/v_tab_line_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#a55fff"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/tv_total"
+            app:layout_constraintStart_toStartOf="@id/tv_total"
+            app:layout_constraintTop_toBottomOf="@id/tv_total" />
+
+        <TextView
+            android:id="@+id/tv_good"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:gravity="center"
+            android:paddingVertical="9dp"
+            android:text="X발"
+            android:textColor="#535353"
+            android:textFontWeight="600"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_bad"
+            app:layout_constraintStart_toEndOf="@id/tv_total"
+            app:layout_constraintTop_toBottomOf="@id/layout_total_coin" />
+
+        <View
+            android:id="@+id/v_tab_line_2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#a55fff"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/tv_good"
+            app:layout_constraintStart_toStartOf="@id/tv_good"
+            app:layout_constraintTop_toBottomOf="@id/tv_good" />
+
+        <TextView
+            android:id="@+id/tv_bad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:gravity="center"
+            android:paddingVertical="9dp"
+            android:text="O굿"
+            android:textColor="#535353"
+            android:textFontWeight="600"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_good"
+            app:layout_constraintTop_toBottomOf="@id/layout_total_coin" />
+
+        <View
+            android:id="@+id/v_tab_line_3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#a55fff"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/tv_bad"
+            app:layout_constraintStart_toStartOf="@id/tv_bad"
+            app:layout_constraintTop_toBottomOf="@id/tv_bad" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/rv_main"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_total"
+            tools:listitem="@layout/item_main" />
+
+        <ImageView
+            android:id="@+id/iv_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/main_btn_plus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/tv_total"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:fontFamily="@font/pretendard_semibold"
-        android:gravity="center"
-        android:paddingVertical="9dp"
-        android:text="전체"
-        android:textColor="#535353"
-        android:textFontWeight="600"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@id/tv_good"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_total_coin" />
-
-    <View
-        android:id="@+id/v_tab_line_1"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/gray_999999"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@id/tv_total"
-        app:layout_constraintStart_toStartOf="@id/tv_total"
-        app:layout_constraintTop_toBottomOf="@id/tv_total" />
-
-    <TextView
-        android:id="@+id/tv_good"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:fontFamily="@font/pretendard_semibold"
-        android:gravity="center"
-        android:paddingVertical="9dp"
-        android:text="좋은"
-        android:textColor="#535353"
-        android:textFontWeight="600"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@id/tv_bad"
-        app:layout_constraintStart_toEndOf="@id/tv_total"
-        app:layout_constraintTop_toBottomOf="@id/layout_total_coin" />
-
-    <View
-        android:id="@+id/v_tab_line_2"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/gray_999999"
-        android:orientation="horizontal"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@id/tv_good"
-        app:layout_constraintStart_toStartOf="@id/tv_good"
-        app:layout_constraintTop_toBottomOf="@id/tv_good" />
-
-    <TextView
-        android:id="@+id/tv_bad"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:fontFamily="@font/pretendard_semibold"
-        android:gravity="center"
-        android:paddingVertical="9dp"
-        android:text="나쁜"
-        android:textColor="#535353"
-        android:textFontWeight="600"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_good"
-        app:layout_constraintTop_toBottomOf="@id/layout_total_coin" />
-
-    <View
-        android:id="@+id/v_tab_line_3"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/gray_999999"
-        android:orientation="horizontal"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@id/tv_bad"
-        app:layout_constraintStart_toStartOf="@id/tv_bad"
-        app:layout_constraintTop_toBottomOf="@id/tv_bad" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_total"
-        tools:listitem="@layout/item_main" />
-
-    <ImageView
-        android:id="@+id/iv_write"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/main_btn_plus"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

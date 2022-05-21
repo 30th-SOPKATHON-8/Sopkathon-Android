@@ -3,26 +3,47 @@ package org.sopt.sopkathon_8_android.presentation.main
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sopkathon_8_android.databinding.ActivityMainBinding
+import org.sopt.sopkathon_8_android.presentation.viewmodel.MainViewModel
 import org.sopt.sopkathon_8_android.presentation.write.WriteActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private val adapter = MainItemAdapter()
+    private val viewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.viewmodel = viewModel
+        binding.lifecycleOwner = this
         setContentView(binding.root)
 
+        viewModel.getTotalInfo()
+        viewModel.getList(viewModel.category)
+        initRecyclerView()
         clickAll()
         clickGood()
         clickBad()
         clickWrite()
+        observeData()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        viewModel.getList(viewModel.category)
+        viewModel.getTotalInfo()
+    }
+
+    private fun initRecyclerView() {
+        binding.rvMain.adapter = adapter
+        adapter.notifyDataSetChanged()
     }
 
     private fun clickWrite() {
-        binding.ivWrite.setOnClickListener{
+        binding.ivWrite.setOnClickListener {
             val intent = Intent(this, WriteActivity::class.java)
             startActivity(intent)
         }
@@ -33,6 +54,8 @@ class MainActivity : AppCompatActivity() {
             binding.vTabLine1.visibility = View.VISIBLE
             binding.vTabLine2.visibility = View.INVISIBLE
             binding.vTabLine3.visibility = View.INVISIBLE
+            viewModel.category = "all"
+            viewModel.getList(viewModel.category)
         }
     }
 
@@ -41,6 +64,8 @@ class MainActivity : AppCompatActivity() {
             binding.vTabLine2.visibility = View.VISIBLE
             binding.vTabLine1.visibility = View.INVISIBLE
             binding.vTabLine3.visibility = View.INVISIBLE
+            viewModel.category = "bad"
+            viewModel.getList(viewModel.category)
         }
     }
 
@@ -49,6 +74,14 @@ class MainActivity : AppCompatActivity() {
             binding.vTabLine3.visibility = View.VISIBLE
             binding.vTabLine2.visibility = View.INVISIBLE
             binding.vTabLine1.visibility = View.INVISIBLE
+            viewModel.category = "good"
+            viewModel.getList(viewModel.category)
+        }
+    }
+
+    private fun observeData() {
+        viewModel.list.observe(this) {
+            adapter.replaceItem(it)
         }
     }
 }

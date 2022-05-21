@@ -1,7 +1,5 @@
 package org.sopt.sopkathon_8_android.presentation.write
 
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,22 +47,27 @@ class WriteFragment : Fragment() {
         viewModel.isXibal.observe(viewLifecycleOwner) {
             when(it) {
                 true -> {
-                    binding.ivGoodXibal.imageTintList = ColorStateList.valueOf(Color.parseColor("#aaeeeeee"))
-                    binding.ivBadXibal.imageTintList = null
+//                    binding.ivGoodXibal.imageTintList = ColorStateList.valueOf(Color.parseColor("#aaeeeeee"))
+//                    binding.ivBadXibal.imageTintList = null
+                    binding.ivGoodXibal.alpha = 0.5f
+                    binding.ivBadXibal.alpha = 1.0f
                 }
                 false -> {
-                    binding.ivGoodXibal.imageTintList = null
-                    binding.ivBadXibal.imageTintList = ColorStateList.valueOf(Color.parseColor("#aaeeeeee"))
+                    binding.ivGoodXibal.alpha = 1.0f
+                    binding.ivBadXibal.alpha = 0.5f
                 }
+            }
+        }
+        viewModel.isSuccess.observe(viewLifecycleOwner) {
+            parentFragmentManager.commit {
+                replace<ReceiptFragment>(R.id.fcv_write)
             }
         }
     }
 
     private fun clickSubmit() {
         binding.tvSubmit.setOnClickListener {
-            parentFragmentManager.commit {
-                replace<ReceiptFragment>(R.id.fcv_write)
-            }
+            viewModel.post()
         }
     }
 }
