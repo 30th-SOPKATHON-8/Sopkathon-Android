@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,9 +10,7 @@
             type="org.sopt.sopkathon_8_android.presentation.viewmodel.WriteViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.write.ReceiptFragment">
@@ -69,7 +69,8 @@
                 android:text="@{viewmodel.title}"
                 android:textColor="@color/black_222222"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@id/iv_main"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_main" />
 
             <ImageView
@@ -150,16 +151,25 @@
                 app:layout_constraintTop_toBottomOf="@id/iv_under_data" />
 
             <TextView
+                android:id="@+id/tv_xcoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Xcoin"
+                android:textColor="@color/black_222222"
+                app:layout_constraintEnd_toEndOf="@id/layout_inner"
+                app:layout_constraintTop_toTopOf="@id/tv_money_count" />
+
+            <TextView
                 android:id="@+id/tv_money_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp"
                 android:fontFamily="@font/pretendard_medium"
+                android:text="@{viewmodel.price}"
                 android:textColor="@color/black_222222"
                 android:textSize="13sp"
-                app:layout_constraintEnd_toEndOf="@id/layout_inner"
-                app:layout_constraintTop_toBottomOf="@id/iv_under_data"
-                android:text="@{viewmodel.price}" />
+                app:layout_constraintEnd_toStartOf="@id/tv_xcoin"
+                app:layout_constraintTop_toBottomOf="@id/iv_under_data" />
 
             <ImageView
                 android:id="@+id/iv_under_money"
