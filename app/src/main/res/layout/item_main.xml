@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:paddingHorizontal="20dp">
 
-
     <ImageView
         android:id="@+id/iv_mood"
         android:layout_width="0dp"
@@ -36,7 +35,6 @@
         android:id="@+id/tv_item_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/pretendard_medium"
         android:textColor="#999999"
@@ -58,6 +56,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="+ 3,000 시발코인" />
+        tools:text="+ 3,000 Xcoin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
