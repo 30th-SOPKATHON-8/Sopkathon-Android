@@ -36,6 +36,7 @@
         android:id="@+id/layout_total_coin"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:paddingBottom="9dp"
         android:layout_marginTop="19dp"
         android:background="@drawable/rectangle_gray_radius_10"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,17 +126,16 @@
 
         <ImageView
             android:id="@+id/iv_main_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="9dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:src="@drawable/ic_launcher_background"
-            app:layout_constraintBottom_toBottomOf="@id/layout_total_coin"
+            app:layout_constraintBottom_toBottomOf="@id/tv_total_cost"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="@id/layout_total_coin"
-            app:layout_constraintTop_toTopOf="@id/layout_total_coin"
-            app:layout_constraintWidth_percent="0.06" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_coin_inform"
+            app:layout_constraintHorizontal_bias="0.911"
+             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
