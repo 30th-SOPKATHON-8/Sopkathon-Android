@@ -3,6 +3,9 @@
 ### 오시내시<br>
 ## 2️⃣서비스 소개
 ***오늘의 시발이 내일의 시발, 나의 감정기록 가계부***<br>
+|<img src="https://user-images.githubusercontent.com/92876819/169670374-943d0bb3-9036-42f4-8fde-f382c3b19982.png" width="200" height="400"/>|<img src="https://user-images.githubusercontent.com/92876819/169670621-9057ddc6-486f-4095-8da7-964c834a3698.png" width = "200" height = "400"/>|<img src="https://user-images.githubusercontent.com/92876819/169670735-92849118-70e9-4804-b830-205ee0d100d2.png" width = "200" height = "400"/>|<img src= "https://user-images.githubusercontent.com/92876819/169670814-4e52d0ae-e11a-41be-a3dd-6c84ecd6ed19.png" width="200" height="400"/>|
+|------|---|---|---|
+|시작 애니메이션|MainActivity|WriteActivity|ReceiptFragment|
 ## 3️⃣역할 <br>
 **지민 - 시발리스트 뷰**<br>
 - MainActivity(가계부 메인 화면) 구현
